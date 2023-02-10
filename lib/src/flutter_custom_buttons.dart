@@ -7,7 +7,7 @@ class Buttons extends StatefulWidget {
   final double elevation;
   final String txt;
   final double fontSize;
-  final Function() onPressed;
+  final Function() onTap;
   final Color background;
   final Color textColor;
   final Color? borderColor;
@@ -20,7 +20,7 @@ class Buttons extends StatefulWidget {
     required this.elevation,
     required this.txt,
     required this.fontSize,
-    required this.onPressed,
+    required this.onTap,
     required this.background,
     required this.textColor,
     this.borderColor,
@@ -33,26 +33,35 @@ class Buttons extends StatefulWidget {
 class _ButtonsState extends State<Buttons> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: widget.onPressed,
-      style: ElevatedButton.styleFrom(
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: Card(
         elevation: widget.elevation,
-        fixedSize: Size(widget.width, widget.height),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(widget.radius),
         ),
-        side: BorderSide(
-            color: widget.borderColor == null
-                ? widget.background
-                : widget.borderColor!,
-            width: 2.0),
-      ),
-      child: Text(
-        widget.txt,
-        style: TextStyle(
-          color: widget.textColor,
-          fontSize: widget.fontSize,
-          fontWeight: FontWeight.bold,
+        child: Container(
+          width: widget.width,
+          height: widget.height,
+          padding: const EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            color: widget.background,
+            borderRadius: BorderRadius.circular(widget.radius),
+            border: Border.all(
+              color: widget.borderColor == null
+                  ? widget.background
+                  : widget.borderColor!,
+              width: 2.0,
+            ),
+          ),
+          child: Text(
+            widget.txt,
+            style: TextStyle(
+              color: widget.textColor,
+              fontSize: widget.fontSize,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
     );

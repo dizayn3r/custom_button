@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
           txt: "Button",
           textColor: Colors.white,
           fontSize: 20.0,
-          onPressed: () {
+          onTap: () {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text("Button pressed"),

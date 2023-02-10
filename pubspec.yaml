@@ -1,6 +1,6 @@
 name: flutter_custom_buttons
-description: Flutter Custom Buttons
-version: 0.0.1
+description: Flutter Custom Buttons provide user to customize button to their need. User can manipulate width, height, radius, color, text, text color, etc.
+version: 0.0.2
 homepage: https://github.com/dizayn3r/flutter_buttons
 
 environment:
