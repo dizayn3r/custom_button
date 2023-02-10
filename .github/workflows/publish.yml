@@ -7,6 +7,6 @@ on:
 
 jobs:
   publish:
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml
+    uses: dizayn3r/flutter_custom_buttons/.github/workflows/publish.yml
     # with:
     #   working-directory: path/to/package/within/repository
